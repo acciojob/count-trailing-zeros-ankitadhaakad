@@ -6,13 +6,15 @@ function trailingZeros(n) {
   return count;
 }
 
-// Prompt user for input
-const input = prompt("Enter a non-negative integer:");
-const number = parseInt(input);
+function calculateTrailingZeros() {
+  const input = prompt("Enter a non-negative integer:");
+  const number = parseInt(input);
 
-// Validate and display result
-if (!isNaN(number) && number >= 0) {
-  alert("Number of trailing zeros in " + number + "! is: " + trailingZeros(number));
-} else {
-  alert("Please enter a valid non-negative integer.");
+  if (isNaN(number) || number < 0) {
+    alert("Please enter a valid non-negative integer.");
+    return;
+  }
+
+  const result = trailingZeros(number);
+  alert(`Number of trailing zeros in ${number}! is: ${result}`);
 }
